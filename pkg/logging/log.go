@@ -54,6 +54,10 @@ func Info(v ...interface{}) {
 	setPrefix(INFO)
 	logger.Println(v)
 }
+func Infof(template string, v ...interface{}) {
+	setPrefix(INFO)
+	logger.Printf(template, v)
+}
 
 // Warn output logs at warn level
 func Warn(v ...interface{}) {
@@ -65,6 +69,10 @@ func Warn(v ...interface{}) {
 func Error(v ...interface{}) {
 	setPrefix(ERROR)
 	logger.Println(v)
+}
+func Errorf(template string, v ...interface{}) {
+	setPrefix(ERROR)
+	logger.Printf(template, v)
 }
 
 // Fatal output logs at fatal level

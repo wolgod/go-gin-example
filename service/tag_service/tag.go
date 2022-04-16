@@ -55,7 +55,7 @@ func (t *Tag) Delete() error {
 	return models.DeleteTag(t.ID)
 }
 
-func (t *Tag) Count() (int, error) {
+func (t *Tag) Count() (int64, error) {
 	return models.GetTagTotal(t.getMaps())
 }
 

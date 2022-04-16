@@ -35,8 +35,8 @@ func ExistArticleByID(id int) (bool, error) {
 }
 
 // GetArticleTotal gets the total number of articles based on the constraints
-func GetArticleTotal(maps interface{}) (int, error) {
-	var count int
+func GetArticleTotal(maps interface{}) (int64, error) {
+	var count int64
 	if err := db.Model(&Article{}).Where(maps).Count(&count).Error; err != nil {
 		return 0, err
 	}
@@ -63,10 +63,10 @@ func GetArticle(id int) (*Article, error) {
 		return nil, err
 	}
 
-	err = db.Model(&article).Related(&article.Tag).Error
+	/*err = db.Model(&article).Related(&article.Tag).Error
 	if err != nil && err != gorm.ErrRecordNotFound {
 		return nil, err
-	}
+	}*/
 
 	return &article, nil
 }

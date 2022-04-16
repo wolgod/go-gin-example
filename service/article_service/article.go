@@ -118,7 +118,7 @@ func (a *Article) ExistByID() (bool, error) {
 	return models.ExistArticleByID(a.ID)
 }
 
-func (a *Article) Count() (int, error) {
+func (a *Article) Count() (int64, error) {
 	return models.GetArticleTotal(a.getMaps())
 }
 

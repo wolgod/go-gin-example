@@ -59,6 +59,11 @@ func InitRouter() *gin.Engine {
 		apiv1.DELETE("/articles/:id", v1.DeleteArticle)
 		//生成文章海报
 		apiv1.POST("/articles/poster/generate", v1.GenerateArticlePoster)
+
+		apiv1.GET("/getZggStockValueCurrent", v1.GetZggStockValueCurrent)
+		apiv1.GET("/getZggStockValue", v1.GetZggStockValue)
+
+		//获取指定文章
 	}
 
 	return r
