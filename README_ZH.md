@@ -2,6 +2,12 @@
 
 `gin` 的一个例子，包含许多有用特性
 
+## 获取中概股数据
+
+https://ushq.stock.sohu.com/meigu/top/allchina_diffRatio_Up.js?_=1650164797777
+
+
+
 ## 目录
 
 本项目提供 [Gin实践](https://segmentfault.com/a/1190000013297625) 的连载示例代码

@@ -22,7 +22,7 @@ func GetZggStockValue(c *gin.Context) {
 	appG := app.Gin{C: c}
 	err, values := models.GetZggStockValue()
 	if err != nil {
-		appG.Response(http.StatusInternalServerError, e.ERROR_GET_TAGS_FAIL, nil)
+		appG.Response(http.StatusInternalServerError, e.ERROR_GET_ZGG_DATA_FAIL, nil)
 		return
 	}
 	data := make(map[string]interface{})
@@ -32,8 +32,11 @@ func GetZggStockValue(c *gin.Context) {
 func GetZggStockValueCurrent(c *gin.Context) {
 	appG := app.Gin{C: c}
 	zggJob := &zgg_service.ZggJob{}
-	value := zggJob.GetZggStockValue()
-
+	err, value := zggJob.GetZggStockValueBySohu()
+	if err != nil {
+		appG.Response(http.StatusInternalServerError, e.ERROR_GET_ZGG_DATA_FAIL, nil)
+		return
+	}
 	data := make(map[string]interface{})
 	data["lists"] = value
 	appG.Response(http.StatusOK, e.SUCCESS, data)

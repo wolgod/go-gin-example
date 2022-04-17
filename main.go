@@ -46,7 +46,6 @@ func main() {
 		MaxHeaderBytes: maxHeaderBytes,
 	}
 	c := cron.New()
-
 	//spce := fmt.Sprint("@every ", time.Duration(10)*time.Second)
 	c.AddJob("00 07 * * *", zgg_service.ZggJob{})
 	//c.AddJob(spce, zgg_service.ZggJob{})
