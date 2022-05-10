@@ -17,7 +17,7 @@ clean:
 	go clean -i .
 
 help:
-	@echo "make: compile packages and dependencies"
+	@echo "make: compile packages and dependencies "
 	@echo "make tool: run specified go tool"
 	@echo "make lint: golint ./..."
 	@echo "make clean: remove object files and cached files"
